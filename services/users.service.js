@@ -21,7 +21,7 @@ class Userservice{
         try {
             const presentData = await Users.query().where({email:data.email})
             if(presentData.length > 0){
-                const token = jwt.sign({ id: presentData[0].id }, "iamsecret");
+                const token = jwt.sign({ id: presentData[0].id }, process.env.SECRET_KEY);
                 return  {status: true,message: "Login Successfully...",user: presentData[0],token: token};
             }else{
                 return {status:false,message:"invalid Email or Password....."}
