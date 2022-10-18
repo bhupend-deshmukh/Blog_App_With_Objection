@@ -22,6 +22,7 @@ postRouter.get('/getAllPost',verifytoken,async(req,res)=>{
 
 postRouter.get('/getpost/:id',verifytoken,async(req,res)=>{
     let post_id = req.params.id
+    
     const result = await service.Get_Post_id({post_id})
     res.send(result)
 })
