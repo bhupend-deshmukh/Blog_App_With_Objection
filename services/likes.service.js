@@ -2,6 +2,7 @@ const Likes = require("../models/likes.model");
 const Posts = require("../models/posts.model");
 
 class Likeservice{
+    
     async Create_like(data){
         try {
             let post_id = data.post_id
@@ -24,6 +25,7 @@ class Likeservice{
             console.log(error);
         }
     }
+
 }
 
 module.exports = Likeservice
